@@ -27,12 +27,12 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     grid-template-areas: 
     "Daniel Daniel Jonathan Kira"
     "Jeanette Patrick Patrick Kira";
     gap: 1.8rem;
-    height: fit-content;
+    /* height: fit-content; */
     width: 70%;
 }
 .el {
@@ -130,7 +130,7 @@ h5 {
         margin-bottom: 40px;
     }
     .el:nth-child(2) {
-        height: fit-content;
+        /* height: fit-content; */
         gap: 8px;
     }
 }
