@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --light-gray: hsl(0, 0%, 81%);
+    --bg-color: hsl(210, 46%, 95%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 10px;
+    background-color: var(--bg-color);
+}
+.main__container {
+    display:flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "Daniel Daniel Jonathan Kira"
+    "Jeanette Patrick Patrick Kira";
+    gap: 1.8rem;
+    height: fit-content;
+    width: 70%;
+}
+.el {
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    display: grid;
+    gap: 5px;
+}
+
+.el:first-child {
+    grid-area: Daniel;
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+    background-color: var(--moderate-violet);
+    color: white;
+}
+.el:nth-child(2) {
+    grid-area: Jonathan;
+    background-color: var(--very-dark-grayish-blue);
+    color: white;
+}
+.el:nth-child(3) {
+    grid-area: Jeanette;
+    background-color: white;
+}
+
+.el:nth-child(4) {
+    grid-area: Patrick;
+    background-color: var(--very-dark-blackish-blue);
+    color: white;
+}
+.el:last-child {
+    grid-area: Kira;
+    background-color: white;
+}
+
+.el:first-child h6,
+.el:first-child p {
+    color: rgba(255,255,255,0.7);
+}
+.el:nth-child(2) h6,
+.el:nth-child(2) p {
+    color: rgba(255,255,255,0.7);
+}
+.el:nth-child(4) h6,
+.el:nth-child(4) p {
+    color: rgba(255,255,255,0.7);
+}
+
+.el:nth-child(3) h6,
+.el:nth-child(3) p {
+    color: rgba(0,0,0,0.7);
+}
+.el:last-child h6,
+.el:last-child p {
+    color: rgba(0,0,0,0.7);
+}
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+}
+
+h5 {
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width:768px) {
+    .main__container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "Daniel"
+        "Jonathan"
+        "Jeanette"
+        "Patrick"
+        "Kira";
+    }
+    .el:last-child {
+        margin-bottom: 40px;
+    }
+    .el:nth-child(2) {
+        height: fit-content;
+        gap: 8px;
+    }
+}
+
+/* UTILITY CLASSES */
+
+.el__image {
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    height: 24px;
+    width: 24px;
+}
+.desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
